@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
+<id>http://www.cs.adelaide.edu.au.com/feed/atom</id>
+<title>Computer Science School's News</title>
+<subtitle>Latest news from University of Adelaide</subtitle>
+<updated>2018-10-11T10:37:06+00:00</updated>
+<link href="http://www.cs.adelaide.edu.au.com/feed/atom" rel="self">
+</link>
+<author>
+<name>Yi-Ting, Hsieh</name>
+</author>
+<entry>
+<title>news 1 entry 2</title>
+<link href="www.news1entry2.com"></link>
+<id>urn:uuid:14dcd775-c0b8-47c8-bffc-d54990606b05</id>
+<updated>2018-10-06T04:23:00+00:00</updated>
+<summary>This is news feed 1 entry 2</summary>
+</entry>
+<entry>
+<title>news 1 entry 1</title>
+<link href="www.news1entry1.com"></link>
+<id>urn:uuid:7c49fd9e-11a4-4b50-a881-80580e22f530</id>
+<updated>2018-10-05T04:19:00+00:00</updated>
+<summary>This is news feed 1 entry 1</summary>
+</entry>
+<entry>
+<title>news 1 entry 3</title>
+<link href="www.news1entry3.com"></link>
+<id>urn:uuid:5f1b5738-8771-422e-8466-cb69da631fc6</id>
+<updated>2018-10-04T04:12:00+00:00</updated>
+<summary>This is news feed 1 entry 3</summary>
+</entry>
+</feed>

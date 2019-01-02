@@ -1,0 +1,11 @@
+calcMake:	bn.o calculator.o
+	gcc -o calc bn.o calc.o -Wall
+
+calculator.o:	calc.c bn.h
+	gcc -c calc.c -Wall
+
+bn.o:	bn.c bn.h
+	gcc -c bn.c -Wall
+
+
+

@@ -1,0 +1,18 @@
+title:News Feed 1
+subtitle:News Feed 1 Subtitle
+link:www.newsfeed1.com
+updated:2018-10-05T04:30:00Z
+author:News Feed 1 Author
+id:urn:uuid:275867af-e68b-4488-abbb-8ae2808d2253
+entry
+title:modified 1 entry 1
+link:www.modified1entry1.com
+id:urn:uuid:cd07cc3f-04e5-43d9-8d40-0191887ffbe8
+updated:2018-10-02T04:19:00Z
+summary:This is modified feed 1 entry 1
+entry
+title:modified 2 entry 2
+link:www.modified2entry2.com
+id:urn:uuid:2713c4cf-83c3-4bdc-95a5-5d1874c20d8d
+updated:2018-10-03T04:21:00Z
+summary:This is modified feed 2 entry 2

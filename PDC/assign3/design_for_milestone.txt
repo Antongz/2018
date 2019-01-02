@@ -1,0 +1,47 @@
+ /* Author: Yi-Ting, Hsieh(a1691807  */
+
+Objective:
+	Implement a Branch-and-Bound program for the Salesman Problem(SP) sequentially. Next, implement it in parallel using MPI and analyze the difference and performance.
+
+SP:
+	Find the shortest route for a traveling salesman so that the salesman visits every one of a set of cities exactly once(Note: the salesman doesn't return home).
+
+	
+The input file organized as follows: 
+
+N 
+d[1][2] 
+d[1][3] d[2][3] 
+d[1][4] d[2][4] d[3][4] 
+... 
+d[1][N] d[2][N] d[3][N] ... d[N-1][N] 
+
+
+
+Design:
+	1.) Struct an object, called SalesMans, with some useful members that could be accessed for further use.
+	2.) Read from our input file and stores the value of distances between cities in SalesMans.Matrix[][]
+	3.) Using Branch-and-Bound algorithm:
+		By using two data structures: a stack and a circular queue, we can implement the tree structure.  Because we only starts from the root, which is the city 1, and then we go down to level 2 to explore a branch of the factorial trees. And then we keep counting the path as we go through and move on to the next level(Notice: in any path a city can only be visited only once). Again, we enumerate all possible vertices and go through all of it and find the shortest path.
+	
+
+
+Measurements of performance for the graph:
+	As we have already described the behaviour of B&B algorithm, we know the worst case complexity remains the same as Brute Force. That means we may have to go through (n-1)! to find out the shortest path where n stands for number of cities(included city 1).	
+	
+	I have already run through my program with different input sizes of cases and find out it works pretty well when the n is less than or equal to 12. But when the n is up to 15, it takes about 4 seconds to get the result. And when the n is 16, it takes more than 18 seconds to get the result. So we can imagine that it would take much longer to finish when the n is above 20. And that is why we are going to use parallelize  our program to explore how multhreading is going to improve the performance.
+
+
+
+
+Idea for parallelisation:
+	My idea is quite easy. Because the layer2 has (n-1) subtrees, so we can use p(number of threads) threads work concurrently in different subtrees and go through all the subtress. To be more precise, in layer2, we divide (n-1) by p and get how many subtrees for each thread has to go through. And we have to assign each thread with different subtrees so that there is no a subtree will be go through twice. In addition, we store the final path value global, but any thread may call it simultaneously. The idea is we should use a lock, and once one thread is going to change the minimum path value, it locks the key and other threads which are also requiring the keys at the same time have to wait until the lock is released. 
+
+Measurements:
+	Right now I am just using `time` command to analyze the program time. However, it will include the time to read from the input file. So I will find another approach later to see whether I could just start the timer when the program is about to run B&B codes.   
+
+Log file:
+	My program couldn't write log file correctly. I probably won't be able to finish it in next 30 minutes, but I'll keep trying.
+
+03/05/18 00:35
+	Just fix the log file. Right now it can write log file correctly.

@@ -1,0 +1,30 @@
+title:News Feed 4
+subtitle:News Feed 4 Subtitle
+link:www.newsfeed4.com
+updated:2018-10-09T04:30:00Z
+author:News Feed 4 Author
+id:urn:uuid:77959020-e1a0-4dc2-b5f5-6a0cdccc2f92
+entry
+title:news 4 entry 1
+link:www.news4entry1.com
+id:urn:uuid:cd07cc3f-04e5-43d9-8d40-0191887ffbe8
+updated:2018-10-01T04:19:00Z
+summary:This is news feed 4 entry 1
+entry
+title:news 4 entry 2
+link:www.news4entry2.com
+id:urn:uuid:2713c4cf-83c3-4bdc-95a5-5d1874c20d8d
+updated:2018-09-03T04:21:00Z
+summary:This is news feed 4 entry 2
+entry
+title:news 4 entry 3
+link:www.news4entry3.com
+id:urn:uuid:7692985d-1c50-433e-a23a-a8e55c7a33f4
+updated:2018-10-04T04:12:00Z
+summary:This is news feed 4 entry 3
+entry
+title:news 4 entry 4
+link:www.news4entry4.com
+id:urn:uuid:436f829c-ae33-4e9d-8b74-daab1928ba2b
+updated:2018-10-05T04:14:00Z
+summary:This is news feed 4 entry 4

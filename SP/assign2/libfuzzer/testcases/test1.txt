@@ -1,0 +1,6 @@
+5
+print
+5
+swap
++
+print

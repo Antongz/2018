@@ -1,0 +1,7 @@
+title:News Feed 4
+subtitle:News Feed 4 Subtitle
+link:www.newsfeed4.com
+updated:2018-10-09T04:30:00Z
+author:News Feed 4 Author
+id:urn:uuid:77959020-e1a0-4dc2-b5f5-6a0cdccc2f92
+

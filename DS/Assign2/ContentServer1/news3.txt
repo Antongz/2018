@@ -1,0 +1,24 @@
+title:News Feed 3
+subtitle:News Feed 3 Subtitle
+link:www.newsfeed3.com
+updated:2018-10-05T04:30:00Z
+author:News Feed 3 Author
+id:urn:uuid:275867af-e68b-4488-abbb-8ae2808d2253
+entry
+title:news 3 entry 1
+link:www.news3entry1.com
+id:urn:uuid:7c49fd9e-11a4-4b50-a881-80580e22f530
+updated:2018-10-05T04:32:00Z
+summary:This is news feed 3 entry 1
+entry
+title:news 3 entry 2
+link:www.news3entry2.com
+id:urn:uuid:14dcd775-c0b8-47c8-bffc-d54990606b05
+updated:2018-10-09T04:23:00Z
+summary:This is news feed 3 entry 2
+entry
+title:news 3 entry 3
+link:www.news3entry3.com
+id:urn:uuid:5f1b5738-8771-422e-8466-cb69da631fc6
+updated:2018-10-10T04:12:00Z
+summary:This is news feed 3 entry 3

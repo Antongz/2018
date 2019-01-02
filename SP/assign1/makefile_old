@@ -1,0 +1,23 @@
+IDIR=./include
+cc=gcc
+CFLAGS=-Wall -I$(IDIR)
+
+ODIR=obj
+LDIR=./lib
+
+LIBS=-lm
+
+_DEPS = bn.h
+DEPS = $(patsubst %, $(IDIR)/%, $(_DEPS))
+
+_OBJ = bn.o calc.o
+OBJ = $(pathsubst %, $(ODIR)/%, $(_OBJ))
+
+$(ODIR)/%.o: %.c $(DEPS)
+	$(CC) -c -o $@$< $(CFLAGS)
+
+calcmake: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+
+clean:
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~

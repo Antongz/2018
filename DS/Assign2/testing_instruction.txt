@@ -1,0 +1,119 @@
+/* a1691807, Yi-Ting, Hsieh */
+
+##Test Case 1:
+	Subjects: 
+		1. XML parsing works
+		2. client, Atom server and content server processes start up and communicate
+		3. PUT operation works for one content server
+		4. GET operation works for many read clients
+ 		5. ATOM server expired feeds works(15s)
+		6. Lamport Clocks are implemented(Advanced functionality)
+
+	Testing instructions(by default, the port number is 4567):
+		1.) Start the AtomServer:
+			$ java AtomServer (#port)
+
+		2.) Start ContentServer:
+			$ java ContentServer localhost:#port ContentServer1/news1.txt 
+
+		3.) Start GETClient:
+			$ java GETClient localhost:#port
+			ReEnter again this command after 15 seconds.
+
+	Because the ContentServer1/news1.txt has one feed with 3 entries. The AtomServer will sort out the entries time and reorder it. In your terminal, whicn is running your client, you will get the output of your feed sorted based on the timestamp from the most recent one(top) to the oldest one(bottom).
+
+
+##Test Case 2:
+	Subjects: 
+		1. When the feed is updated, the ContentServer can update the feed.
+		2. Retry on errors.
+
+	Testing instructions(by default, the port number is 4567):
+		1.) Start ContentServer:
+			$ java ContentServer localhost:#port ContentServer1/news1.txt 
+			(Because the AtomServer is not available yet, the ContentServer will retry to connect it for 5 times(we must bring the AtomServer online in time).
+
+		2.) Start the AtomServer:
+			$ java AtomServer (#port)
+			Now the ContentServer is connected to the AtomServer. The AtomServer should get the PUT message from ContentServer now.
+
+		3.) Start GETClient:
+			$ java GETClient localhost:#port
+			Print out the current feeds.
+
+		4.) Now, you can randomly modify the content in our news1.txt. We provide a modified_text.txt file for you. You can copy the content in modified_text.txt to news1.txt. Don't forget to save it, so that the ContentServer can know the file is modified.
+
+		5.)  Call GETClient:
+			$ java GETClient localhost:#port
+			Print out the current feeds and compare the content with last time.
+
+
+##Test Case 3:
+	Subjects: 
+		1. Content servers are replicated and fault tolerant(advanced).
+		2. GET operation works for many read clients.
+
+	Testing instructions(by default, the port number is 4567):
+		
+		1.) Start the AtomServer:
+			$ java AtomServer (#port)
+
+		2.) Start many ContentServer in different terminals(if you are using tmux, you can easily create different tabs for it):
+		     Start to run 4 ContentServers at the same time and read from different files.
+			$ java ContentServer localhost:#port ContentServer1/news1.txt 
+			$ java ContentServer localhost:#port ContentServer1/news2.txt 
+			$ java ContentServer localhost:#port ContentServer1/news3.txt 
+			$ java ContentServer localhost:#port ContentServer1/news4.txt 
+
+
+		3.) Start GETClient:
+		     You can run different clients in different terminals at the same time:
+			$ java GETClient localhost:#port
+			Print out the current feeds.
+
+		4.) You can stop AtomServer at this point, and you should be able to see other ContentServers will try to re-connect to the AtomServer.
+
+
+##Test Case 4:
+	Subjects: 
+		1. Atom server should only provide the most recent 25 feed items.
+		2. The lamport clocks is still working(advanced)
+
+	Testing instructions(by default, the port number is 4567):
+		
+		1.) Start the AtomServer:
+			$ java AtomServer (#port)
+
+		2.) Start ContentServer:
+		     We provide two feeds file in ContentServer2/ folder, each one contains 30 feed entries. You can use it to test whether you can get the most recent 25 feed items.
+			$ java ContentServer localhost:#port ContentServer2/news1.txt 
+			$ java ContentServer localhost:#port ContentServer2/news2.txt 
+
+		3.) Start GETClient:
+			$ java GETClient localhost:#port
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
